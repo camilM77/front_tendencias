@@ -1,0 +1,101 @@
+<app-person-toolbar [entityName]="form.name"></app-person-toolbar>
+
+<div class="grid justify-center mt-4">
+  <div class="card shadow-2xl shadow-black">
+    <div class="card-body">
+      <div class="card-title">
+        Administración <span class="text-primary">Personas</span>
+      </div>
+      <div class="divider"></div>
+      <div class="grid">
+        <label for="">Nombre:</label>
+        <input
+          class="input input-primary"
+          type="text"
+          name=""
+          id=""
+          placeholder="Ejemplo: Pedro "
+          [(ngModel)]="form.name"
+        />
+        <label for="">Apellido:</label>
+        <input
+          class="input input-primary"
+          type="text"
+          name=""
+          id=""
+          placeholder="Ejemplo: Perez"
+          [(ngModel)]="form.lastname"
+        />
+        <label for="">Teléfono celular:</label>
+        <input
+          class="input input-primary"
+          type="text"
+          name=""
+          id=""
+          placeholder="Ejemplo: 0123456789"
+          [(ngModel)]="form.phone"
+        />
+        <label for="">Fecha de nacimiento:</label>
+        <input
+          class="input input-primary"
+          type="date"
+          name=""
+          id=""
+          placeholder="Ejemplo: 12-12-2000"
+          [(ngModel)]="form.birthday"
+        />
+        <div class="form-control">
+          <label class="label cursor-pointer justify-start">
+            <input
+              type="checkbox"
+              class="toggle toggle-primary"
+              [(ngModel)]="form.enabled"
+            />
+            <span class="label-text ml-2">Activo</span>
+          </label>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-primary btn-sm" (click)="save()">Guardar</button>
+        <button class="btn btn-sm">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="card card-compact shadow-2xl shadow-black bg-red-300">
+    <div class="card-body">
+      <div class="card-title">Precaución</div>
+      <p>Si elimina el registro no prodrá recuperarlo</p>
+      <div class="card-actions">
+        <label for="my-modal-6" class="btn modal-button btn-secondary btn-xs"
+          >Eliminar</label
+        >
+
+        <!-- Put this part before </body> tag -->
+        <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+        <div class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Por favor confirme la eliminación</h3>
+            <p class="py-4">No se podrán revertir los cambios</p>
+            <div class="form-control">
+              <label class="label cursor-pointer justify-start">
+                <input
+                  type="checkbox"
+                  class="toggle toggle-primary"
+                  [(ngModel)]="form.enabled"
+                />
+                <span class="label-text ml-2">Desactivado</span>
+              </label>
+            </div>
+            <div class="modal-action">
+              <label for="my-modal-6" class="btn btn-info" (click)="save()"
+                >Confirmar</label
+              >
+              <label for="my-modal-6" class="btn btn-info">Cancelar</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
